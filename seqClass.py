@@ -21,4 +21,4 @@ if re.search('^[ACGTU]+$', args.seq):
     else:
         print ('The sequence can be DNA or RNA')
 else:
-    print ('LEuge es moolt guapa i ho està intentant molt')
+    print ('The sequence is not DNA nor RNA')
