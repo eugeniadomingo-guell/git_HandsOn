@@ -12,25 +12,25 @@ if len(sys.argv) == 1:
     parser.print_help()
     sys.exit(1)
 
-args = parser.parse_args()
+args = parser.parse_args() #Using the parser function
 
 args.seq = args.seq.upper()
-if re.search('^[ACGTU]+$', args.seq):
-    if re.search('T', args.seq):
-        print ('The sequence is DNA')
+if re.search('^[ACGTU]+$', args.seq): #Searching the ACGTU letters in the sequence, if there are other letters, we're gonna get the "error" message : The sequence is not DNA nor RNA 
+    if re.search('T', args.seq): 
+        print ('The sequence is DNA') #We're gonna get this message if the sequence contains a T
     elif re.search('U', args.seq):
-        print ('The sequence is RNA')
+        print ('The sequence is RNA') #We're gonna get this message if the sequence contains a U
     else:
         print ('The sequence can be DNA or RNA')
 else:
-    print ('The sequence is not DNA nor RNA')
+    print ('The sequence is not DNA nor RNA') #We're gonna get this message if the sequence does contain a letter which is not AUGCT
 
 
 if args.motif:
     args.motif = args.motif.upper()
     print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')
     if re.search(args.motif, args.seq):
-        print("DISELOOO!")
+    print("DISELOOO!") #When the sequence contains the motif introduced by the user
     else:
         print("THIS MOTIF WAS NOT FOUND")
 
