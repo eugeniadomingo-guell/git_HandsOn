@@ -32,4 +32,5 @@ if args.motif:
     if re.search(args.motif, args.seq):
         print("DISELOOO!")
     else:
-        print("OH OHHHHH")
+        print("THIS MOTIF WAS NOT FOUND")
+
